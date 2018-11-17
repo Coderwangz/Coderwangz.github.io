@@ -67,7 +67,20 @@ layout: default
         {% include previousAndNext.html %}
 
         <h2 id="comments">Comments</h2>
-        {% include comments.html %}
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <div id="gitalk-container"></div>
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script type="text/javascript">
+            var gitalk = new Gitalk({
+                clientID: '58c61ff54349cbb9a0c9',
+                clientSecret: '59e5370488a4345901161914e8092e1e11e6593d',
+                repo: 'blogcomments',
+                owner: 'Coderwangz',
+                admin: ['Coderwangz'],
+                id: '{{page.title}}',
+            })
+            gitalk.render('gitalk-container')
+        </script>
 
 
     </div>
